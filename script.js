@@ -21,7 +21,13 @@ createApp({
     multiplierA: 0.3,
     multiplierB: 0
   },
+
+
+
+
 	async init() {
+    const shader = await fetch('./shaders/index.glsl').then(res => res.text()).then(res => console.log(res))
+
   	const geometry = new THREE.SphereGeometry(1, 64, 32)
     const material = new THREE.MeshStandardMaterial({ roughness: this.params.roughness })
     
